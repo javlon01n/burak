@@ -1,17 +1,31 @@
-# TASK-M
+# TASK - N
 
-def getSquareNumbers(numbers):
-    result = []
-    for number in numbers:
-        obj = {
-           "number": number,
-           "square": number ** 2 
-        }
-        result.append(obj)
+def palindromCheck(text):
+    reversed_text = text[::-1]
+    return text == reversed_text
+
+print(palindromCheck("dad"))
+
+
+
+
+
+
+
+ # TASK-M
+
+# def getSquareNumbers(numbers):
+#     result = []
+#     for number in numbers:
+#         obj = {
+#            "number": number,
+#            "square": number ** 2 
+#         }
+#         result.append(obj)
        
-    return result
+#     return result
     
-print(getSquareNumbers([1, 2, 3]))
+# print(getSquareNumbers([1, 2, 3]))
 
 
 # TASK-l
