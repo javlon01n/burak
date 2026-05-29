@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
 import router from "./router";
+import routerAdmin from "./routerAdmin";
 
 //Expressni 4ta bo'lomi mavjud
 /**  1-ENTRANCE **/
@@ -17,6 +18,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("views engine", "ejs");
 
 /** 4-ROUTERS **/
-app.use("/", router)  // Middleware Design pattern
+app.use("/admin", routerAdmin) // SSE: EJS
+app.use("/", router)  //  SPA: REACT, Middleware Design pattern
 
 export default app;
