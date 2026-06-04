@@ -26,3 +26,8 @@ memberDesc?: string;
 memberImage?: string; 
 memberPoints?: number;
 }
+
+export interface LoginInput {
+    memberNick: string; 
+    memberPassword: string;
+}
