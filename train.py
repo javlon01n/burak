@@ -1,20 +1,44 @@
-# TASK - O
 
-def calculateSumOfNumbers(arr):
+# TASK - P
 
-    total = 0
+def objectToArray(obj):
 
-    for item in arr:
+    result = []
 
-        if type(item) == int and type(item) != bool:
-            total += item
+    for key, value in obj.items():
 
-    return total
+        result.append([key, value])
+
+    return result
 
 
-result = calculateSumOfNumbers([10, "10", {"son": 10}, True, 35])
+result = objectToArray({
+    "a": 10,
+    "b": 20
+})
 
 print(result)
+
+
+
+
+# TASK - O
+
+# def calculateSumOfNumbers(arr):
+
+#     total = 0
+
+#     for item in arr:
+
+#         if type(item) == int and type(item) != bool:
+#             total += item
+
+#     return total
+
+
+# result = calculateSumOfNumbers([10, "10", {"son": 10}, True, 35])
+
+# print(result)
 
 
 
