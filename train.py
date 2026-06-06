@@ -1,25 +1,44 @@
 
+
+
+# TASK - Q
+
+def hasProperty(obj, prop):
+
+    return prop in obj
+
+
+print(
+    hasProperty(
+        {"name": "BMW"},
+        "name"
+    )
+)
+
+
+
+
+
+
 # TASK - P
 
-def objectToArray(obj):
+# def objectToArray(obj):
 
-    result = []
+#     result = []
 
-    for key, value in obj.items():
+#     for key, value in obj.items():
 
-        result.append([key, value])
+#         result.append([key, value])
 
-    return result
-
-
-result = objectToArray({
-    "a": 10,
-    "b": 20
-})
-
-print(result)
+#     return result
 
 
+# result = objectToArray({
+#     "a": 10,
+#     "b": 20
+# })
+
+# print(result)
 
 
 # TASK - O
@@ -39,8 +58,6 @@ print(result)
 # result = calculateSumOfNumbers([10, "10", {"son": 10}, True, 35])
 
 # print(result)
-
-
 
 
 # TASK - N
