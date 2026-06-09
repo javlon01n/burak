@@ -22,4 +22,16 @@
 /**
     Traditinal FD  =>  SSR  => EJS
     Modern FD.     =>  SPA  => REACT
- */
+ */ 
+
+
+
+function hasProperty(obj: any, property: string): boolean {
+    if (property in obj) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(hasProperty({ name: "BMW" }, "name"));
