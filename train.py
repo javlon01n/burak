@@ -12,7 +12,7 @@ def calculate(text):
     
     if operator == "+":
         return num1 + num2
-
+ 
 print(calculate("1 + 3"))
 
 
