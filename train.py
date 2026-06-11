@@ -1,19 +1,37 @@
+
+# TASK - S
+
+def missingNumber(numbers):
+    
+    numbers.sort()
+    
+    for i in range(len(numbers)):
+        if numbers[i] != i:
+            return i
+
+print(missingNumber([3, 0, 1]))
+
+
+
+
+
+
 # TASK - R
 
 
-def calculate(text):
-    parts = text.split()
+# def calculate(text):
+#     parts = text.split()
     
-    num1 = int(parts[0])
+#     num1 = int(parts[0])
 
-    operator = parts[1]
+#     operator = parts[1]
 
-    num2 = int(parts[2])
+#     num2 = int(parts[2])
     
-    if operator == "+":
-        return num1 + num2
+#     if operator == "+":
+#         return num1 + num2
  
-print(calculate("1 + 3"))
+# print(calculate("1 + 3"))
 
 
 

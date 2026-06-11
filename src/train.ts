@@ -40,6 +40,24 @@ import join from '../node_modules/fast-xml-parser/src/v6/valueParsers/join';
  */
 
 
+//task -S
+
+function  missingNumber(numbers: number[]) {
+
+    for (let i = 0; i <= numbers.length; i++) {
+        if ( !numbers.includes(i) ) {
+            return i;
+        }
+        
+    }
+
+}
+
+
+console.log(missingNumber([3, 0, 1]));
+
+
+
 // function hasProperty(obj: any, property: string): boolean {
 //     if (property in obj) {
 //         return true;
