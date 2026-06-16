@@ -1,3 +1,26 @@
+# TASK - T
+
+
+def mergeSortedArrays(arr1, arr2):
+
+    merged = arr1 + arr2
+
+    merged.sort()
+
+    return merged
+
+
+print(
+    mergeSortedArrays(
+        [0, 3, 4],
+        [4, 6]
+    )
+)
+
+print(mergeSortedArrays)
+
+
+
 
 # TASK - S
 
