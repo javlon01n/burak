@@ -5,6 +5,7 @@ import {AdminRequest, LoginInput, MemberInput } from '../libs/types/member';
 import { MemberType } from '../libs/enums/member.enum';
 import Errors, { HttpCode, Message } from '../libs/Errors';
 import { next } from '../../node_modules/connect-mongodb-session/node_modules/mongodb/src/cursor/abstract_cursor';
+import data from '../../node_modules/@mongodb-js/saslprep/dist/code-points-data-browser.d';
  
 const memberService = new MemberService();
 
@@ -122,12 +123,16 @@ restaurantController.getUsers = async (req: Request, res: Response) => {
     }
 };
 
-restaurantController.updateChosenUsers = (req: Request, res: Response) => {
+restaurantController.updateChosenUser = async (req: Request, res: Response) => {
     try {
-        console.log("updateChosenUsers");
-        res.render("Login");
+        console.log("updateChosenUser");
+        const result = await memberService.updateChosenUser(req.body);
+         
+        res.status(HttpCode.OK).json({ data: result }); 
     } catch (err) {
-        console.log("Error, updateChosenUsers", err);
+        console.log("Error, updateChosenUser", err);
+        if (err instanceof Errors) res.status(err.code).json(err);
+        else res.status(Errors.standard.code).json(Errors.standard);
     }
 };
 
