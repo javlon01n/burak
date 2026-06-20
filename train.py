@@ -1,38 +1,60 @@
+# TASK - V
+
+def countChars(text):
+
+    result = {}
+
+    for char in text:
+
+        if char in result:
+            result[char] += 1
+        else:
+            result[char] = 1
+
+    return result
+
+
+print(countChars("hello"))
+
+
+
+
+
 # TASK - T
 
 
-def mergeSortedArrays(arr1, arr2):
+# def mergeSortedArrays(arr1, arr2):
 
-    merged = arr1 + arr2
+#     merged = arr1 + arr2
 
-    merged.sort()
+#     merged.sort()
 
-    return merged
+#     return merged
 
 
-print(
-    mergeSortedArrays(
-        [0, 3, 4],
-        [4, 6]
-    )
-)
+# print(
+#     mergeSortedArrays(
+#         [0, 3, 4],
+#         [4, 6]
+#     )
+# )
 
-print(mergeSortedArrays)
+# print(mergeSortedArrays)
 
 
 
 
 # TASK - S
 
-def missingNumber(numbers):
+# def missingNumber(numbers):
     
-    numbers.sort()
+#     numbers.sort()
     
-    for i in range(len(numbers)):
-        if numbers[i] != i:
-            return i
+#     for i in range(len(numbers)):
+#         if numbers[i] != i:
+#             return i
 
-print(missingNumber([3, 0, 1]))
+# print(missingNumber([3, 0, 1]))
 
 
 
