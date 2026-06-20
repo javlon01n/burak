@@ -44,13 +44,15 @@
               </tr>
             </thead>
             <!--  LOOP PRODUCTS: START  -->
+
+            <% products.map((ele, order) => { %>
             <tbody style="background: white">
-              <td>1</td>
-              <td>Steak</td>
-              <td>Dish</td>
-              <td>NORMAL</td>
-              <td>11</td>
-              <td>100</td>
+              <td><%= order +1 %></td>
+              <td><%=ele.productName %></td>
+              <td><%=ele.productCollection %></td>
+              <td><%=ele.productSize %></td>
+              <td><%=ele.productPrice  %></td>
+              <td><%=ele.productLeftCount %></td>
               <td>
                 <select class="spec-select new-product-status">
                   <option value="PAUSE" selected>PAUSE</option>
@@ -59,6 +61,10 @@
                 </select>
               </td>
             </tbody>
+            <% }) %>
+
+
+
             <!--  LOOP PRODUCTS: END  -->
           </table>
           <div
