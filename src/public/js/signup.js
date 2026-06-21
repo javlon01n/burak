@@ -45,7 +45,7 @@ if (memberPassword !== confirmPassword) {
     alert ("Password differs, please check!");
     return false;
  }
-
+console.log("validateSignupForm ishladi");
  const memberImage = $(".member-image").get(0).files[0].name
  ? $(".member-image").get(0).files[0].name
  : null;

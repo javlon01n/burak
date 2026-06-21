@@ -45,19 +45,23 @@
             </thead>
             <!--  LOOP PRODUCTS: START  -->
 
-            <% products.map((ele, order) => { %>
+            <% products.map((value, key)  => { %>
             <tbody style="background: white">
-              <td><%= order +1 %></td>
-              <td><%=ele.productName %></td>
-              <td><%=ele.productCollection %></td>
-              <td><%=ele.productSize %></td>
-              <td><%=ele.productPrice  %></td>
-              <td><%=ele.productLeftCount %></td>
+              <td><%= key +1 %></td>
+              <td><%=value.productName %></td>
+              <td><%=value.productCollection %></td>
+              <td><%=value.productCollection === 'DRINK' ? value.productVolume :
+                value.productSize%></td>
+              <td><%=value.productPrice  %></td>
+              <td><%=value.productLeftCount %></td>
               <td>
-                <select class="spec-select new-product-status">
-                  <option value="PAUSE" selected>PAUSE</option>
-                  <option value="PROCESS">PROCESS</option>
-                  <option value="DELETE">DELETE</option>
+                <select
+                 class="spec-select new-product-status"
+                 id="<%= value._id %>"
+                 >
+                  <option value="PAUSE" <%= value.productStatus === 'PAUSE' ?  'selected': '' %> >PAUSE</option>
+                  <option value="PROCESS" <%= value.productStatus === 'PROCESS' ?  'selected': '' %> >PROCESS</option>
+                  <option value="DELETE" <%= value.productStatus === 'DELETE' ?  'selected': '' %> >DELETE</option>
                 </select>
               </td>
             </tbody>

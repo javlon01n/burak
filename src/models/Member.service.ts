@@ -44,10 +44,13 @@ class MemberService {
         const isMatch = await bcrypt.compare(
             input.memberPassword,
             member.memberPassword
+
         );
         if (!isMatch) {
             throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
+
         }
+
 
         return await this.memberModel.findById(member._id).lean().exec();
     }
@@ -111,7 +114,9 @@ class MemberService {
     public async updateChosenUser(input: MemberUpdateInput ): Promise<Member[]> {
         input._id = shapeIntoMongooseObjectId(input._id);
         const result = await this.memberModel
-        .findByIdAndUpdate({ _id: input._id }, input, {new: true})
+        .findByIdAndUpdate({ _id: input._id }, //fiter
+             input,  //obdate
+             {new: true}) //obtion
         .exec();
     if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 
