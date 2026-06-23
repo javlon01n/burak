@@ -1,20 +1,38 @@
-# TASK - V
+# TASK - W
 
-def countChars(text):
-
-    result = {}
-
-    for char in text:
-
-        if char in result:
-            result[char] += 1
-        else:
-            result[char] = 1
-
+def chunkArray(numbers, size):
+    result = []
+    i = 0
+    for i in range (0, len(numbers), size):
+        chunk = numbers[i:i+size]
+        result.append(chunk)
+        
     return result
 
 
-print(countChars("hello"))
+print(chunkArray([1, 2, 3, 4, 5], 2))
+
+
+
+
+
+# TASK - V
+
+# def countChars(text):
+
+#     result = {}
+
+#     for char in text:
+
+#         if char in result:
+#             result[char] += 1
+#         else:
+#             result[char] = 1
+
+#     return result
+
+
+# print(countChars("hello"))
 
 
 
