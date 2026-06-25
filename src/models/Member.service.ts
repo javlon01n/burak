@@ -24,7 +24,7 @@ class MemberService {
         try {
             const result = await this.memberModel.create(input);
             result.memberPassword = "";
-            return result.toJSON();
+            return result.toJSON() as unknown as Member;
         }   catch (err) {
             console.log("Error, model:signup", err);
             throw new Errors(HttpCode.BAD_REQUEST, Message.USED_NICK_PHONE);
@@ -56,7 +56,7 @@ class MemberService {
         }
 
 
-        return await this.memberModel.findById(member._id).lean().exec();
+        return await this.memberModel.findById(member._id).lean().exec() as unknown as Member;
     }
 
 
@@ -77,7 +77,7 @@ class MemberService {
         try {
             const result = await this.memberModel.create(input);
             result.memberPassword = "";
-            return result;
+            return result as unknown as Member;
         }   catch (err) {
             throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
         }
@@ -102,7 +102,7 @@ class MemberService {
             throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
         }
 
-        return await this.memberModel.findById(member._id).exec();
+        return await this.memberModel.findById(member._id).exec() as unknown as Member;
     }
 
     public async getUsers(): Promise<Member[]> {
@@ -111,7 +111,7 @@ class MemberService {
         .exec();
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
-    return result;
+    return result as unknown as Member[];
      
     }
 
@@ -124,7 +124,7 @@ class MemberService {
         .exec();
     if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 
-    return result;
+    return result as unknown as Member[];
      
     }
 }
