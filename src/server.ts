@@ -3,6 +3,12 @@ dotenv.config();
 import mongoose from "mongoose";
 import app from "./app"
 
+
+mongoose.set('strictQuery', true); // ← shu qatorni qo'shing
+mongoose.connect(process.env.MONGO_URL as string, {})
+    .then(() => {  })
+
+
 //TSP 1
 mongoose
 .connect(process.env.MONGO_URL as string, {})

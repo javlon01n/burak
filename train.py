@@ -1,30 +1,50 @@
+
+# TASK - Y
+
+def find_intersection(array1, array2):
+    result = []  
+
+    for element in array1:           
+        if element in array2:        
+            if element not in result: 
+                result.append(element)  
+
+    return result
+
+
+print(find_intersection([1, 2, 3], [3, 2, 0]))
+
+
+
+
+
 # TASK - X
 
-def countOccurrences(obj, key):
-    count = 0
+# def countOccurrences(obj, key):
+#     count = 0
 
-    for item in obj:
+#     for item in obj:
 
-        if item == key:
-            count += 1
+#         if item == key:
+#             count += 1
 
-        if isinstance(obj[item], dict):
-            count += countOccurrences(obj[item], key)
+#         if isinstance(obj[item], dict):
+#             count += countOccurrences(obj[item], key)
 
-    return count
-
-
+#     return count
 
 
-data = {
-    "model": "A",
-    "s": {
-        "model": "B"
-    }
-}
 
 
-print(countOccurrences(data, "model"))
+# data = {
+#     "model": "A",
+#     "s": {
+#         "model": "B"
+#     }
+# }
+
+
+# print(countOccurrences(data, "model"))
 
 
 
