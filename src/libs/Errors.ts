@@ -16,10 +16,11 @@ export enum Message {
     UPDATE_FAILED = "Update is failed",
 
     USED_NICK_PHONE = "You are inserting already used nick or phone!",
+    TOKEN_CRETION_FILED = "Token creation error!",
     NO_MEMBER_NICK = "No member with that member nick!",
     BLOCKED_USER = "You have been blocked, contact restaurant!",
     WRONG_PASSWORD = "Wrong password, please try again!",
-    NOT_AUTHENTICATED = "You are not authenticated, please login first!"
+    NOT_AUTHENTICATED = "You are not authenticated, please login first!" 
 }
 
 class Errors extends Error {
