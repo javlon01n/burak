@@ -11,14 +11,14 @@ class AuthService {
             const duration = `${AUTH_TIMER}h`;
             jwt.sign(
                 payload,
-                process. env. SECRET_TOKEN as string,
+                process. env.SECRET_TOKEN as string,
                 {
                   expiresIn: duration,
                 },
                 (err, token) => {
                     if (err)
                         reject (
-                         new Errors (HttpCode. UNAUTHORIZED, Message.TOKEN_CRETION_FILED)
+                         new Errors (HttpCode.UNAUTHORIZED, Message.TOKEN_CRETION_FILED)
                         ) ;
                     else resolve(token as string);
                 }
