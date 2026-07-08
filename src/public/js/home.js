@@ -96,3 +96,4 @@ function fitElementToParent(el, padding) {
 
   init();
 })();
+

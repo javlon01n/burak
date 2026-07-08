@@ -88,7 +88,7 @@ class MemberService {
     ): Promise<Member> {
         const memberId = shapeIntoMongooseObjectId(member._id);
         const result = await this.memberModel
-        .findOneAndUpdate({ _id: memberId }, input, { new: true })
+        .findOneAndUpdate({ _id: memberId }, input, { new: true }) //idni member Idga tenglayabmiz va 2-argumentda yanglashimiz kerak bo'lgan objectni berayabmiz va 3-si obtion xisoblanadi unda yangilangan malumotni ber deyapmiz
         .exec();
         if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 
@@ -98,8 +98,8 @@ class MemberService {
     public async getTopUsers(): Promise<Member[]> {
         const result = await this.memberModel
         .find({
-            memberStatus: MemberStatus.ACTIVE,
-            memberPoints: { $gte: 1 },
+            memberStatus: MemberStatus.ACTIVE, //sorching condition berayapmiz 
+            memberPoints: { $gte: 1 }, //bu yergacha bo'lgan natija bizga qureyni beradi
         })
         .sort({ memberPoints: -1 })
         .limit(4)
