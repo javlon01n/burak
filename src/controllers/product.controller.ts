@@ -3,7 +3,7 @@ import Errors, { HttpCode, Message } from "../libs/Errors";
 import { T } from "../libs/types/common";
 import ProductService from '../models/product.service';
 import { ProductInput, ProductInquiry } from '../libs/types/product';
-import { AdminRequest } from '../libs/types/member';
+import { AdminRequest, ExtendeRequest } from '../libs/types/member';
 import { ProductCollection } from '../libs/enums/product.enum';
 
 const productService = new ProductService();
@@ -30,6 +30,24 @@ productController.getProducts = async (req: Request, res: Response) => {
        res.status(HttpCode.OK).json(result);
     } catch (err) {
         console.log("Error, getProducts", err);
+        if (err instanceof Errors) res.status(err.code).json(err);
+        else res.status(Errors.standard.code).json(Errors.standard);
+    }
+}
+
+
+productController.getProduc = async (req: ExtendeRequest, res: Response) =>{
+      try {
+        console.log("getProduc");
+        const { id } = req.params;
+        console.log("req.member:", req.member);
+        
+        const memberId = req.member?._id ?? null,
+        result = await productService.getProduc(memberId, id);
+      
+        res.status(HttpCode.OK).json(result);
+    } catch (err) {
+        console.log("Error, getProduc", err);
         if (err instanceof Errors) res.status(err.code).json(err);
         else res.status(Errors.standard.code).json(Errors.standard);
     }
