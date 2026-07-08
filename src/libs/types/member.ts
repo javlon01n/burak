@@ -5,7 +5,7 @@ import { Session } from 'express-session';
 import { ObjectID } from '../../../node_modules/connect-mongodb-session/node_modules/mongodb/src/index';
 
 export interface Member {
-    _id: ObjectId
+    _id: ObjectId;
 memberType: MemberType; 
 memberStatus: MemberStatus; 
 memberNick: string; 
