@@ -27,3 +27,9 @@ export interface OrderItemInput {
     productId: ObjectId;
     orderId?: ObjectId;
 }
+
+export interface OrderInquiry{
+    page: number;
+    limit: number;
+    orderStatus: OrderStatus;
+}
